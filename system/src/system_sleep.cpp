@@ -46,7 +46,9 @@ static void network_suspend() {
     wakeupState.cloud = spark_connected();
     spark_disconnect();
 #endif
+#if Wiring_WiFi
     network_off(0, 0, 0, NULL);
+#endif
 }
 
 static void network_resume() {
